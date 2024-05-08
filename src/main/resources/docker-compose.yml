@@ -1,0 +1,15 @@
+version: "3.8"
+services:
+  javatechiemysqldb:
+    image: mysql:latest
+    restart: always
+    container_name: "javatechiemysqldb"
+    ports:
+      - 3306:3306
+  springboot-mysqldb:
+    image: springboot-mysqldb:1.0
+    container_name: "springboot-mysqldb"
+    ports:
+      - 9191:9191
+    links:
+      - javatechiemysqldb
